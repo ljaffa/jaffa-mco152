@@ -20,13 +20,5 @@ public class QuadraticEquationTest {
 		
 		Assert.assertEquals((-4), x, .1);
 	}
-	
-	@Test
-	public void testGetNegativeX1(){
-		QuadraticEquation q = new QuadraticEquation(0, 3, (-4));
-		double x = q.getNegativeX();
-		
-		Assert.assertEquals((-4), x, .1);
-	}
 
 }
