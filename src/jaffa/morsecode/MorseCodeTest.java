@@ -12,5 +12,13 @@ public class MorseCodeTest {
 		
 		Assert.assertEquals(".... . .-.. .-.. ---   .-- --- .-. .-.. -..", code);
 	}
+	
+	@Test
+	public void testDecode(){
+		MorseCode mc = new MorseCode();
+		String message = mc.decode(".... . .-.. .-.. ---   .-- --- .-. .-.. -..");
+		
+		Assert.assertEquals("Hello world", message);
+	}
 
 }
