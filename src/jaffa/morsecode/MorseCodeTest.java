@@ -1,14 +1,15 @@
 package jaffa.morsecode;
 
+import org.junit.Assert;
 import org.junit.Test;
-import junit.framework.Assert;
+
 
 public class MorseCodeTest {
 	
 	@Test
 	public void testEncode(){
 		MorseCode mc = new MorseCode();
-		String code = mc.encode("Hello world");
+		String code = mc.encode("HELLO WORLD");
 		
 		Assert.assertEquals(".... . .-.. .-.. ---   .-- --- .-. .-.. -..", code);
 	}
@@ -18,7 +19,7 @@ public class MorseCodeTest {
 		MorseCode mc = new MorseCode();
 		String message = mc.decode(".... . .-.. .-.. ---   .-- --- .-. .-.. -..");
 		
-		Assert.assertEquals("Hello world", message);
+		Assert.assertEquals("HELLO WORLD", message);
 	}
 
 }

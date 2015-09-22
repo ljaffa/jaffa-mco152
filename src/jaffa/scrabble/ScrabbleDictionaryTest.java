@@ -2,9 +2,10 @@ package jaffa.scrabble;
 
 import java.io.FileNotFoundException;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
+
 
 public class ScrabbleDictionaryTest {
 	
@@ -12,7 +13,7 @@ public class ScrabbleDictionaryTest {
 	public void testContains() throws FileNotFoundException{
 		ScrabbleDictionary dictionary = new ScrabbleDictionary();
 		
-		Assert.assertEquals(true, dictionary.contains("ride"));
+		Assert.assertTrue(dictionary.contains("ride"));
 	}
 
 }
