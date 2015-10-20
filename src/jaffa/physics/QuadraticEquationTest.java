@@ -7,7 +7,16 @@ public class QuadraticEquationTest {
 
 	@Test
 	public void testGetNegativeX() {
-		QuadraticEquation q = new QuadraticEquation(1, 3, -4);
+		QuadraticEquation q = null;
+		try {
+			q = new QuadraticEquation(1, 3, -4);
+		} catch (ImaginaryNumberException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DivideByZeroException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		double x = q.getNegativeX();
 
 		Assert.assertEquals(-4, x, .1);
@@ -15,7 +24,16 @@ public class QuadraticEquationTest {
 
 	@Test
 	public void testGetPositiveX() {
-		QuadraticEquation q = new QuadraticEquation(1, 3, -4);
+		QuadraticEquation q = null;
+		try {
+			q = new QuadraticEquation(1, 3, -4);
+		} catch (ImaginaryNumberException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DivideByZeroException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		double x = q.getPositiveX();
 
 		Assert.assertEquals(1, x, .1);
@@ -27,8 +45,12 @@ public class QuadraticEquationTest {
 		try {
 			new QuadraticEquation(0, 0, 0);
 			Assert.fail("Didn't throw Exception");
-		} catch (InvalidException e) {
-			// expected
+		} catch (ImaginaryNumberException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DivideByZeroException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
