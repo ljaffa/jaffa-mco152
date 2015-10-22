@@ -16,10 +16,10 @@ public class UFOSightingMain {
 		Gson gson = new Gson();
 
 		UFOSightingList list = gson.fromJson(in, UFOSightingList.class);
-		UFOSighting array[] = gson.fromJson(in, UFOSighting[].class);
+		// UFOSighting array[] = gson.fromJson(in, UFOSighting[].class);
 
 		System.out.println(list.size());
-		System.out.println(array.length);
+		// System.out.println(array.length);
 
 		in.close();
 
