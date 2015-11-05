@@ -14,4 +14,10 @@ public class ScrabbleDictionaryTest {
 		Assert.assertTrue(dictionary.contains("ride"));
 	}
 
+	@Test
+	public void testContains2() throws IOException {
+		ScrabbleDictionary dic = new ScrabbleDictionary();
+
+		Assert.assertTrue(dic.contains("crate"));
+	}
 }

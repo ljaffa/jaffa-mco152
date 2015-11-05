@@ -6,7 +6,6 @@ import java.awt.Container;
 import javax.swing.JFrame;
 
 public class SmileJFrame extends JFrame {
-
 	public static void main(String[] args) {
 
 		new SmileJFrame().setVisible(true);
