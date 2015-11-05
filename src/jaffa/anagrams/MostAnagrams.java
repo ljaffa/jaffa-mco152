@@ -1,25 +1,26 @@
 package jaffa.anagrams;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class MostAnagrams {
 
-	public static void main(String args[]) throws FileNotFoundException {
+	public static void main(String args[]) throws IOException {
 		// make a hashMap of String, ArrayList - if hashMap has sorted word, add
 		// to arrayList of sorted word
 		// if not, add word to HashMap
 		HashMap<String, ArrayList<String>> anagrams = new HashMap<String, ArrayList<String>>();
 
-		Scanner file = new Scanner(new File("US.dic"));
+		BufferedReader file = new BufferedReader(new FileReader("US.dic"));
 
-		while (file.hasNext()) {
-			String dictionaryWord = file.next();
+		String dictionaryWord;
+		while ((dictionaryWord = file.readLine()) != null) {
+			//String dictionaryWord = file.readLine();
 			char[] dictionaryLetters = dictionaryWord.toCharArray();
 			Arrays.sort(dictionaryLetters);
 			String anagramWord = new String(dictionaryLetters);
@@ -40,6 +41,9 @@ public class MostAnagrams {
 		int greatestValue = 0;
 		String greatestWord = "";
 		ArrayList<String> greatestWords = new ArrayList<String>();
+		String greatestWord2 = "";
+		ArrayList<String> greatestWords2 = new ArrayList<String>();
+
 		for (Map.Entry<String, ArrayList<String>> entry : anagrams.entrySet()) {
 			// System.out.println(entry.getKey() + " \t\t" + entry.getValue());
 			if (entry.getValue().size() > greatestValue) {
@@ -47,9 +51,15 @@ public class MostAnagrams {
 				greatestWord = entry.getKey();
 				greatestWords = entry.getValue();
 			}
+			else if (entry.getValue().size() == greatestValue){
+				greatestWord2 = entry.getKey();
+				greatestWords2 = entry.getValue();
+			}
 		}
 		System.out.println(greatestValue);
 		System.out.println(greatestWord);
 		System.out.println(greatestWords);
+		System.out.println(greatestWord2);
+		System.out.println(greatestWords2);
 	}
 }
