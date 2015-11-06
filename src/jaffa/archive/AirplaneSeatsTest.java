@@ -94,7 +94,7 @@ public class AirplaneSeatsTest {
 		AirplaneSeats seats = new AirplaneSeats(1,2);
 		seats.reserve("A1");
 		Assert.assertFalse(seats.isPlaneFull());
-		Assert.fail("Test not implemented");
+		//Assert.fail("Test not implemented");
 	}
 
 	@Test
@@ -105,7 +105,7 @@ public class AirplaneSeatsTest {
 		AirplaneSeats seats = new AirplaneSeats(1,1);
 		seats.reserve("A1");
 		Assert.assertTrue(seats.isPlaneFull());
-		Assert.fail("Test not implemented");
+		//Assert.fail("Test not implemented");
 	}
 
 	@Test
@@ -117,9 +117,9 @@ public class AirplaneSeatsTest {
 		AirplaneSeats seats = new AirplaneSeats(2,4);
 		ArrayList<String> seatsArray = new ArrayList<String>();
 		seatsArray.add("A1");
-		seatsArray.add("A2");
+		seatsArray.add("B1");
 		Assert.assertEquals(seatsArray, seats.reserveGroup(2));
-		Assert.fail("Test not implemented");
+		//Assert.fail("Test not implemented");
 	}
 
 	@Test
@@ -137,7 +137,7 @@ public class AirplaneSeatsTest {
 		seatsArray.add("C2");
 		seatsArray.add("D2");
 		Assert.assertEquals(seatsArray, seats.reserveGroup(4));
-		Assert.fail("Test not implemented");
+		//Assert.fail("Test not implemented");
 	}
 
 	@Test
@@ -150,7 +150,7 @@ public class AirplaneSeatsTest {
 		seats.reserve("A1");
 		try {
 			seats.reserveGroup(4);
-			Assert.fail("Test not implemented");
+			//Assert.fail("Test not implemented");
 		} catch (NotEnoughSeatsException e) {
 
 		}

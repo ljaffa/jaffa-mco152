@@ -138,16 +138,19 @@ public class AirplaneSeats {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 
+		builder.append("\t\t");
 		for (int i = 0; i < airplane.length + 1; i++) {
 			builder.append(letters.get(i));
 		}
 		builder.append("\n");
+		//builder.append("\n");
 		for (int i = 0; i < airplane.length; i++) {
 			builder.append(i + 1 + "\t");
 			for (int j = 0; j < airplane[i].length; j++) {
 				builder.append(airplaneSeats.get(airplane[i][j]));
 			}
 			builder.append("\n");
+
 		}
 
 
@@ -175,6 +178,7 @@ public class AirplaneSeats {
 			throws NotEnoughSeatsException, AlreadyReservedException,
 			SeatOutOfBoundsException {
 		ArrayList<String> seats = new ArrayList<String>();
+		//String[] reserveSeats = new String[numberOfSeatsTogether];
 		int count = 0;
 		boolean enough = false;
 		int row = 0;
@@ -186,17 +190,35 @@ public class AirplaneSeats {
 			}
 			if (count >= numberOfSeatsTogether) {
 				enough = true;
-				row = i;
+				;				row = i;
+				int j = 0;
+				while(j < numberOfSeatsTogether){
+					if (airplaneSeats.get(airplane[row][j]) == 'o') {
+						String seat = letters.get(j) + "" + (i + 1);
+						//reserve(seat);
+						seats.add(seat);
+						reserve(seat);
+						//reserveSeats.add(seat);
+						j++;
+					}
+				}
 				break;
 			}
+			count = 0;
 		}
-		for (int j = 0; j < airplane[row].length; j++) {
+		/*for (int j = 0; j < airplane[row].length; j++) {
 			if (airplaneSeats.get(airplane[row][j]) == 'o') {
 				String seat = "letters.get(row)" + "j";
-				reserve(seat);
+				//reserve(seat);
 				seats.add(seat);
 			}
-		}
+		}*/
+		/*for (String seat : seats){
+			reserve(seat);
+			//if (airplaneSeats.get(seat) == 'o'){
+			//reserve(seat);
+			//}
+		}*/
 		return seats;
 	}
 
