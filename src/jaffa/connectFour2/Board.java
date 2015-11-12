@@ -38,8 +38,4 @@ public class Board extends JComponent{
 		}
 	}
 
-	public void mousePressed(){
-		int mouseX = ;
-		int x = mouseX  / size;
-	}
 }
