@@ -129,7 +129,12 @@ public class AirplaneSeats {
 	 * @return a String representation of reserved and empty seats on the plane
 	 *         in the form of.
 	 * 
-	 *         ABCD\n 1 #oo#\n 2 #ooo\n 3 ###o\n 4 ##oo\n 5 #ooo\n
+	 *         ABCD\n 
+	 *         1 #oo#\n 
+	 *         2 #ooo\n 
+	 *         3 ###o\n 
+	 *         4 ##oo\n 
+	 *         5 #ooo\n
 	 * 
 	 *         Where o is an empty seat and # is a reserved seat.
 	 * 
@@ -138,7 +143,7 @@ public class AirplaneSeats {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 
-		builder.append("\t\t");
+		builder.append("\t" + "\t");
 		for (int i = 0; i < airplane.length + 1; i++) {
 			builder.append(letters.get(i));
 		}
@@ -150,7 +155,6 @@ public class AirplaneSeats {
 				builder.append(airplaneSeats.get(airplane[i][j]));
 			}
 			builder.append("\n");
-
 		}
 
 
