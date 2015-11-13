@@ -154,10 +154,10 @@ public class AirplaneSeats {
 			for (int j = 0; j < airplane[i].length; j++) {
 				builder.append(airplaneSeats.get(airplane[i][j]));
 			}
-			builder.append("\n");
+			if (i < airplane.length){
+				builder.append("\n");
+			}
 		}
-
-
 
 		return builder.toString();
 	}
