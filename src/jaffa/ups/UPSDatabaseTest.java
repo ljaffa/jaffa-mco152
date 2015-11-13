@@ -2,6 +2,7 @@ package jaffa.ups;
 
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -55,7 +56,8 @@ public class UPSDatabaseTest {
 		UPSDatabase ups = new UPSDatabase();
 		Location location = new Location(100,100);
 		ups.getPackages(location);
-		Assert.assertEquals(null, ups.getPackages(location));
+		HashSet<Package> emptySet = new HashSet<Package>();
+		Assert.assertEquals(emptySet, ups.getPackages(location));
 		//Assert.fail("test not implemented");
 	}
 

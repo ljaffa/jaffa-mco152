@@ -51,7 +51,11 @@ public class UPSDatabase {
 	 * the Location doesn't exist or there are no Packages at that Location.
 	 */
 	public Set<Package> getPackages( Location location ) {
-		return locationPackages.get(location);
+		HashSet<Package> packages = new HashSet<Package>();
+		if (locationPackages.containsKey(location)){
+			packages = locationPackages.get(location);
+		}
+		return packages;
 	}
 
 	/**
