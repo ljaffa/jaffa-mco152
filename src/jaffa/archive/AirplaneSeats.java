@@ -22,13 +22,6 @@ public class AirplaneSeats {
 	 *            the number of columns of seats on the plane.
 	 */
 	public AirplaneSeats(int rows, int columns) {
-		/*
-		 * HashMap<Character, Integer> airplane = new HashMap<Character,
-		 * Integer>(); for (int i = 0; i < rows; i++){ for (int j = 0; j <
-		 * columns; j++){ char letter = airplane.put(letter, i+1); } }
-		 * HashMap<HashMap<Character, Integer>, Character> seats = new
-		 * HashMap<HashMap<Character, Integer>, Character>();
-		 */
 		this.airplaneSeats = new HashMap<String, Character>();
 		this.letters = new HashMap<Integer, Character>();
 		Character[] let = new Character[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G',
@@ -81,21 +74,6 @@ public class AirplaneSeats {
 	 * @return true if the seat has been reserved, otherwise false.
 	 */
 	public boolean isReserved(String seatName) {
-		/*char[] seat = seatName.toCharArray();
-		char letter = seat[0];
-		Character number = seat[1];
-		int row = 0;
-		int column = Integer.parseInt(number.toString());
-		for (Map.Entry<Integer, Character> entry : letters.entrySet()) {
-			if (entry.getValue() == letter) {
-				row = entry.getValue();
-			}
-		}
-		if (airplane[row][column] == "#") {
-			return true;
-		} else {
-			return false;
-		}*/
 		if (airplaneSeats.get(seatName) == '#'){
 			return true;
 		}
@@ -139,26 +117,25 @@ public class AirplaneSeats {
 	 *         Where o is an empty seat and # is a reserved seat.
 	 * 
 	 */
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 
-		builder.append("\t" + "\t");
+		builder.append("  ");
 		for (int i = 0; i < airplane.length + 1; i++) {
 			builder.append(letters.get(i));
 		}
-		builder.append("\n");
-		//builder.append("\n");
+
 		for (int i = 0; i < airplane.length; i++) {
-			builder.append(i + 1 + "\t");
+			builder.append("\n");
+			builder.append(i + 1 + " ");
 			for (int j = 0; j < airplane[i].length; j++) {
 				builder.append(airplaneSeats.get(airplane[i][j]));
 			}
-			if (i < airplane.length){
-				builder.append("\n");
-			}
 		}
-
+		System.out.println(builder.toString());
+		builder.append("\n");
 		return builder.toString();
 	}
 
@@ -182,7 +159,6 @@ public class AirplaneSeats {
 			throws NotEnoughSeatsException, AlreadyReservedException,
 			SeatOutOfBoundsException {
 		ArrayList<String> seats = new ArrayList<String>();
-		//String[] reserveSeats = new String[numberOfSeatsTogether];
 		int count = 0;
 		boolean enough = false;
 		int row = 0;
@@ -194,15 +170,13 @@ public class AirplaneSeats {
 			}
 			if (count >= numberOfSeatsTogether) {
 				enough = true;
-				;				row = i;
+				row = i;
 				int j = 0;
 				while(j < numberOfSeatsTogether){
 					if (airplaneSeats.get(airplane[row][j]) == 'o') {
 						String seat = letters.get(j) + "" + (i + 1);
-						//reserve(seat);
 						seats.add(seat);
 						reserve(seat);
-						//reserveSeats.add(seat);
 						j++;
 					}
 				}
@@ -210,19 +184,6 @@ public class AirplaneSeats {
 			}
 			count = 0;
 		}
-		/*for (int j = 0; j < airplane[row].length; j++) {
-			if (airplaneSeats.get(airplane[row][j]) == 'o') {
-				String seat = "letters.get(row)" + "j";
-				//reserve(seat);
-				seats.add(seat);
-			}
-		}*/
-		/*for (String seat : seats){
-			reserve(seat);
-			//if (airplaneSeats.get(seat) == 'o'){
-			//reserve(seat);
-			//}
-		}*/
 		return seats;
 	}
 
