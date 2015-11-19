@@ -14,9 +14,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Gui{
+public class ConnectFourGui extends JFrame{
 
-	private JFrame frame;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//private JFrame frame;
 	private JLabel[][] board;
 	private JButton[] buttons;
 
@@ -33,14 +37,14 @@ public class Gui{
 	private ImageIcon blueIcon;
 	private ImageIcon whiteIcon;
 
-	private Board myBoard;
+	private ConnectFourBoard myBoard;
 
 
 
-	public Gui() {
-		myBoard = new Board();
+	public ConnectFourGui() {
+		myBoard = new ConnectFourBoard();
 
-		frame = new JFrame("Connect Four");
+		//frame = new JFrame("Connect Four");
 
 		redIcon = new ImageIcon("redCircle.jpe");
 		Image redImage = redIcon.getImage();
@@ -57,7 +61,7 @@ public class Gui{
 		Image resizeWhite = whiteImage.getScaledInstance(90, 80, Image.SCALE_SMOOTH);
 		whiteIcon = new ImageIcon(resizeWhite);
 
-		JPanel panel = (JPanel) frame.getContentPane();
+		JPanel panel = (JPanel) getContentPane();
 		panel.setLayout(new GridLayout(rows, columns + 1));
 
 		board = new JLabel[rows][columns];
@@ -87,7 +91,7 @@ public class Gui{
 								else {
 									//change player
 									currentPlayer = myBoard.changePlayer(currentPlayer);
-									frame.setTitle("ConnectFour - Player " + currentPlayer + "'s turn ");
+									setTitle("ConnectFour - Player " + currentPlayer + "'s turn ");
 								}
 							}
 
@@ -106,11 +110,11 @@ public class Gui{
 		}
 
 		//JFrame stuff
-		frame.setContentPane(panel);
-		frame.setSize(800, 700);
-		frame.setVisible(true);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);;
+		setContentPane(panel);
+		setSize(800, 700);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);;
 	}
 
 	public void updateBoard(){
@@ -130,25 +134,25 @@ public class Gui{
 
 	public void showWon(){
 		String winner = "Player " + currentPlayer + " wins!";
-		int n = JOptionPane.showConfirmDialog(frame, "Would you like to play another game?", winner, JOptionPane.YES_NO_OPTION);
+		int n = JOptionPane.showConfirmDialog(this, "Would you like to play another game?", winner, JOptionPane.YES_NO_OPTION);
 		if (n < 1){
-			frame.dispose();
+			dispose();
 			newGame = true;
 		}
 		else {
-			frame.dispose();
+			dispose();
 			quit = true;
 		}
 	}
 
 	public void showTie(){
-		int n = JOptionPane.showConfirmDialog(frame,  "Would you like to play another game?", "Tie Game", JOptionPane.YES_NO_OPTION);
+		int n = JOptionPane.showConfirmDialog(this,  "Would you like to play another game?", "Tie Game", JOptionPane.YES_NO_OPTION);
 		if (n < 1){
-			frame.dispose();
+			dispose();
 			newGame = true;
 		}
 		else{
-			frame.dispose();
+			dispose();
 			quit = true;
 		}
 	}

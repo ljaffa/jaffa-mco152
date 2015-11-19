@@ -1,6 +1,6 @@
 package jaffa.connectFour;
 
-public class Board {
+public class ConnectFourBoard {
 
 	private int xSize;
 	private int ySize;
@@ -8,7 +8,7 @@ public class Board {
 	private int cellsLeft;
 	private int max;
 
-	public Board(){
+	public ConnectFourBoard(){
 		xSize = 7;
 		ySize = 6;
 		cellsLeft = 0;

@@ -5,7 +5,7 @@ public class ConnectFour {
 	public static void main(String[] args){
 		int option = 0;
 
-		Gui gui = new Gui();
+		ConnectFourGui gui = new ConnectFourGui();
 
 		while (option != -1){ //quit if option = -1
 			switch(option){
@@ -18,7 +18,7 @@ public class ConnectFour {
 					option = 2;			//tie - end game
 				}
 				else if (gui.getNewGame()){
-					gui = new Gui();		//reset board
+					gui = new ConnectFourGui();		//reset board
 					option = 0;				//start new game
 				}
 				break;
@@ -28,7 +28,7 @@ public class ConnectFour {
 					option = -1; //end game
 				}
 				else if (gui.getNewGame()){
-					gui = new Gui();  //reset board
+					gui = new ConnectFourGui();  //reset board
 					option = 0;			//start new game
 				}
 				break;
@@ -38,7 +38,7 @@ public class ConnectFour {
 					option = -1; 	//end game
 				}
 				else if (gui.getNewGame()){
-					gui = new Gui();		//reset board
+					gui = new ConnectFourGui();		//reset board
 					option = 0;				//start new game
 				}
 				break;
