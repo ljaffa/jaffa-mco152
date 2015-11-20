@@ -1,4 +1,4 @@
-package jaffa.archive;
+package jaffa.airline;
 
 public class NotEnoughSeatsException extends Exception {
 
