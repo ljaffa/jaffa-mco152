@@ -6,6 +6,11 @@ import java.awt.Container;
 import javax.swing.JFrame;
 
 public class SmileJFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String[] args) {
 
 		new SmileJFrame().setVisible(true);

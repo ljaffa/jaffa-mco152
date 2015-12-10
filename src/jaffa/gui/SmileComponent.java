@@ -8,10 +8,10 @@ import javax.swing.JComponent;
 
 public class SmileComponent extends JComponent {
 
-	private int x = 150;
-	private int y = 170;
-	private int height = 0;
-	private int width = 200;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int mouseX;
 	private int mouseY;
 

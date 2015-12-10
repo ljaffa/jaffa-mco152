@@ -160,7 +160,6 @@ public class AirplaneSeats {
 			SeatOutOfBoundsException {
 		ArrayList<String> seats = new ArrayList<String>();
 		int count = 0;
-		boolean enough = false;
 		int row = 0;
 		for (int i = 0; i < airplane.length; i++) {
 			for (int j = 0; j < airplane[i].length; j++) {
@@ -169,7 +168,6 @@ public class AirplaneSeats {
 				}
 			}
 			if (count >= numberOfSeatsTogether) {
-				enough = true;
 				row = i;
 				int j = 0;
 				while(j < numberOfSeatsTogether){
