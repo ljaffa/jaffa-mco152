@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 
 public class WeatherURL {
 
-	// put in URL connection and String builder
 	private String zip;
 
 	public WeatherURL(String zip) {
@@ -20,12 +19,9 @@ public class WeatherURL {
 
 	public CurrentWeather getWeatherURL() throws IOException {
 		CurrentWeather weather;
-		StringBuilder builder = new StringBuilder();
-		builder.append("Http://api.openweathermap.org/data/2.5/weather?zip=");
-		builder.append(zip);
-		builder.append(",us&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial");
+		String urlString = "Http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";  
 
-		URL url = new URL(builder.toString());
+		URL url = new URL(urlString);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
 		InputStream in = connection.getInputStream();
