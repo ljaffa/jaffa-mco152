@@ -1,9 +1,11 @@
 package jaffa.weather;
 
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,18 +34,29 @@ public class WeatherGui extends JFrame{
 
 		setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
+		add(Box.createVerticalStrut(20));
 		zipLabel = new JLabel("Enter a Zip Code");
 		add(zipLabel);
+		add(Box.createVerticalStrut(20));
 		text = new JTextField();
+		text.setMaximumSize( 
+				new Dimension(Integer.MAX_VALUE, text.getPreferredSize().height) );
+		//text.setMaximumSize(text.getPreferredSize());
 		add(text);
-		button = new JButton("Recalculate");
+		add(Box.createVerticalStrut(50));
+
+		button = new JButton("Get weather");
 		add(button);
+		add(Box.createVerticalStrut(20));
 		tempLabel = new JLabel("Temperature");
 		add(tempLabel);
+		add(Box.createVerticalStrut(20));
 		descLabel = new JLabel("Description");
 		add(descLabel);
+		add(Box.createVerticalStrut(20));
 		iconLabel = new JLabel("Icon");
 		add(iconLabel);
+		add(Box.createVerticalStrut(20));
 
 		button.addActionListener(new ActionListener() {
 			//do in separate thread

@@ -40,6 +40,7 @@ public class SmileComponent extends JComponent {
 
 		// if (height == 50) {
 		// height = 0;
+
 		// }
 		// try {
 		// Thread.sleep(16);
