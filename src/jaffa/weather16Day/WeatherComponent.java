@@ -1,9 +1,9 @@
 package jaffa.weather16Day;
 
-import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class WeatherComponent extends JComponent{
+public class WeatherComponent extends JPanel{
 
 	//all things to display
 	private JLabel date;

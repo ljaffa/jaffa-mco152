@@ -24,4 +24,8 @@ public class CurrentWeather {
 		return weather[0];
 	}*/
 
+	/*public String toString(){
+
+	}*/
+
 }

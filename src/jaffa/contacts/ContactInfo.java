@@ -39,7 +39,7 @@ public class ContactInfo extends JFrame{
 
 		setTitle("Contact Info");
 		setSize(800, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Container container = getContentPane();
 		setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
@@ -71,7 +71,7 @@ public class ContactInfo extends JFrame{
 	}
 
 	public String getEmail() {
-		return email;
+		return email.toString();
 	}
 
 	public void setEmail(String email) {

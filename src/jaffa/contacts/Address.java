@@ -39,4 +39,16 @@ public class Address {
 		this.zipcode = zipcode;
 	}
 
+	@Override
+	public String toString(){
+		StringBuilder builder = new StringBuilder();
+		builder.append("Address: ");
+		builder.append(" " + street);
+		builder.append(" " + suite);
+		builder.append(" " + city);
+		builder.append(" " + zipcode);
+
+		return builder.toString();
+	}
+
 }

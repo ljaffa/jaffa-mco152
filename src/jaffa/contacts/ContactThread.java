@@ -72,7 +72,7 @@ public class ContactThread extends Thread {
 		list.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JList clickedList = (JList) e.getSource();
+				JList<Contact> clickedList = (JList<Contact>) e.getSource();
 				if (e.getClickCount() == 2) {
 					int i = clickedList.locationToIndex(e.getPoint());
 					System.out.println(i);

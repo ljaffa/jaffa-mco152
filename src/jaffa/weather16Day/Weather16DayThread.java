@@ -15,14 +15,14 @@ public class Weather16DayThread extends Thread{
 	private WeatherComponent[] days;
 
 	private String text;
-	private JLabel temp;
-	private JLabel desc;
-	private JLabel icon;
+	private JLabel[] temp;
+	private JLabel[] desc;
+	private JLabel[] icon;
 
-	private JLabel dateLabel;
+	private JLabel dateLabel[];
 	private CurrentWeather weather;
 
-	public Weather16DayThread(WeatherComponent[] days, String text,  JLabel temp, JLabel dtLabel, JLabel desc, JLabel icon){
+	public Weather16DayThread(String text,  JLabel[] temp, JLabel[] dtLabel, JLabel[] desc, JLabel[] icon){
 		this.days = days;
 		this.text = text;
 		this.temp = temp;
@@ -39,12 +39,12 @@ public class Weather16DayThread extends Thread{
 		try {
 			weather = weatherUrl.getWeatherUrl();
 			for (int i = 0; i < 16; i++){
-				temp.setText(String.valueOf(weather.getList()[i].getTemp()));
-				desc.setText(weather.getList()[i].getWeather().getDescription());
+				temp[i].setText(String.valueOf(weather.getList()[i].getTemp()).toString());
+				desc[i].setText(weather.getList()[i].getWeather().getDescription());
 
 				SimpleDateFormat formatter = new SimpleDateFormat("MM/dd");
 				String newDate = formatter.format(weather.getList()[i].getDt());
-				dateLabel.setText(String.valueOf(newDate));
+				dateLabel[i].setText(String.valueOf(newDate));
 
 				String picString = "http://openweathermap.org/img/w/" + 
 						weather.getList()[i].getWeather().getIcon() + ".png";
@@ -52,7 +52,7 @@ public class Weather16DayThread extends Thread{
 
 				BufferedImage image = ImageIO.read(picUrl);
 				ImageIcon imageIcon = new ImageIcon(image);
-				icon.setIcon(imageIcon);
+				icon[i].setIcon(imageIcon);
 
 
 				//days[i].setDate(dateLabel);

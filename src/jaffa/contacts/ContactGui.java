@@ -23,7 +23,7 @@ public class ContactGui extends JFrame {
 	public ContactGui() {
 		setTitle("Contact List");
 		setSize(800, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Container container = getContentPane();
 
