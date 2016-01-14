@@ -34,11 +34,9 @@ public class WeatherThread extends Thread{
 
 			String url = "http://openweathermap.org/img/w/" + weather.getWeather()[0].getIcon() + ".png";
 
-			URL picURL = null;
-			picURL = new URL(url);
+			URL picURL = new URL(url);
 
-			BufferedImage image = null;
-			image = ImageIO.read(picURL);
+			BufferedImage image = ImageIO.read(picURL);
 			ImageIcon icon = new ImageIcon(image);
 
 			iconLabel.setIcon(icon);
